@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../RD/小米/reset.css">
+    <!-- DEV指的是开发环境下 -->
+    <link rel="stylesheet" href="./css/index.css ">
+
+</head>
+
+<body>
+        <div class="music" >
+                <audio src="./audio/Valentin - A Little Story.mp3" autoplay loop>
+                </audio>
+            </div>
+    <main class="mainBox">
+        <!-- 外面套一层mainbox；控制当前页面的最大宽度，防止把做好的页面在pc端预览的时候让它满屏 -->
+        <section class="loadingBox">
+            <!-- LODDING 一般指加载区 -->
+            <div class="title">
+                <h1>RD求职简历</h1>
+                <h2>姓名</h2>
+            </div>
+            <div class="progress">
+                <div class="current">
+                </div>
+            </div>
+        </section>
+        <section class="phoneBox">
+            <h2><img src="./img/self.jpg" alt="">
+            </h2>
+
+            <div class="answer">
+                <div class="markMove"></div>
+                <h2>点击了解详情</h2>
+            </div>
+
+
+
+        </section>
+
+
+        <section class="introduction">
+            <div class="bG">
+                <img src="./img/bg4.png" alt="">
+            </div>
+            <h2>基本信息
+                <br>Basic Information
+            </h2>
+            <div class="nL">
+                <ul class="left">
+                    <li>姓名：符奥聪</li>
+                    <li>生日：1997-03-17</li>
+                    <li>性别：男</li>
+                    <li>籍贯：海南临高</li>
+                </ul>
+            </div>
+            <div class="nR">
+                <ul class="right">
+                    <li>现居：北京</li>
+                    <li>学历：本科</li>
+                    <li>毕业院校：北华航天工业学院</li>
+                    <li>求职意向：前端工程师</li>
+                </ul>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
+<script>
+    //根据当前设备的宽度，动态计算出REM的换算比例，实现页面中的等比例缩放
+    ~function anonymous() {
+        let computedREM = function computedREM() {
+            let winW = document.documentElement.clientWidth,
+                desW = 640;
+            if (winW >= 640) {
+                document.documentElement.style.fontSize = '100px';
+                return;
+            }
+            document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+        };
+        computedREM();
+        window.addEventListener('resize', computedREM)
+    }();
+
+</script>
+<script src="./JS/zepto.min.js"></script>
+<script src="./JS/index.js"></script>

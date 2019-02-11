@@ -1,0 +1,370 @@
+html {
+  font-size: 100px;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.music {
+  z-index: 100;
+  background-image: url('../img/musicon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: .3rem;
+  top: .3rem;
+  width: .8rem;
+  height: .8rem;
+}
+.mainBox {
+  max-width: 640px;
+  height: 100%;
+  margin: 0 auto;
+}
+.loadingBox,
+.phoneBox {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.loadingBox {
+  background: black;
+}
+.loadingBox .title {
+  height: 1.4rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -2.2rem;
+  width: 100%;
+  color: #fff;
+}
+.loadingBox .title h1 {
+  line-height: .75rem;
+  font-size: .5rem;
+  text-align: center;
+}
+.loadingBox .title h2 {
+  margin-top: .2rem;
+  line-height: .45rem;
+  text-align: center;
+  letter-spacing: .04rem;
+}
+.loadingBox .progress {
+  width: 4.6rem;
+  height: .3rem;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0.85rem 0 0 -2.3rem;
+  border-radius: .6rem;
+}
+.loadingBox .progress .current {
+  top: 0;
+  left: 0;
+  width: 0;
+  background: -webkit-linear-gradient(45deg, #5cb85c 0%, #5cb85c 25%, #74c274 25%, #74c274 50%, #5cb85c 50%, #5cb85c 75%, #74c274 75%, #74c274 100%);
+  background: linear-gradient(45deg, #5cb85c 0%, #5cb85c 25%, #74c274 25%, #74c274 50%, #5cb85c 50%, #5cb85c 75%, #74c274 75%, #74c274 100%);
+  height: 100%;
+  border-radius: .6rem;
+  background-size: .3rem .3rem;
+  -webkit-animation: loadingMove .5s linear 0s infinite both;
+  animation: loadingMove .5s linear 0s infinite both;
+  transition: .3s;
+}
+/*
+*虽然移动端（安卓系统和IOS系统）大部分上的手机浏览器都支持Webkit内核的，但是由于有些手机
+*操作系统版本过低（尤其是安卓手机），导致很多css3新特性不能有效的识别，所以写两套系统
+*一般将有webkit前缀的写在上面  没有前缀的写在其下方
+*/
+@-webkit-keyframes loadingMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -0.3rem;
+  }
+}
+@keyframes loadingMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -0.3rem;
+  }
+}
+.phoneBox {
+  background: url("../img/bg2.jpg") no-repeat;
+  background-size: cover;
+}
+.phoneBox h2 {
+  margin-top: .5rem;
+  text-align: center;
+}
+.phoneBox h2 img {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.phoneBox h2 span {
+  display: none;
+  margin-top: .1rem;
+  line-height: .3rem;
+  font-size: .3rem;
+  color: #fff;
+  letter-spacing: .05rem;
+}
+.answer {
+  border: white solid both;
+  left: 27%;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  bottom: 1rem;
+}
+.answer h2 {
+  position: absolute;
+  bottom: 0;
+  left: .3rem;
+  width: 2.3rem;
+}
+.answer .markMove {
+  background-image: url(../img/suo.jpg);
+  background-size: 3.2rem;
+  background-position: 0.05rem -0.15rem;
+  position: absolute;
+  right: 24%;
+  bottom: 25%;
+  box-sizing: border-box;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: .03rem solid #74c274;
+  animation: answerMove 1s linear infinite;
+}
+.answer .markLink {
+  background-image: url(../img/suo.jpg);
+  background-size: 3.2rem;
+  background-position: 0.05rem -0.15rem;
+  position: absolute;
+  right: 24%;
+  bottom: 25%;
+  box-sizing: border-box;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: .03rem solid #74c274;
+  animation: answerMove 1s linear infinite;
+  z-index: 2;
+  border: none;
+  border-radius: 0;
+  animation: null;
+}
+@keyframes answerMove {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+.introduction {
+  display: none;
+  padding-top: .5rem;
+  position: relative;
+  height: 100%;
+  background: #f8f8f0;
+}
+.introduction .bG img {
+  width: 6.5rem;
+  height: 3.7rem;
+  position: absolute;
+  margin: 4.19rem 0;
+}
+.introduction h2 {
+  text-align: center;
+  margin-bottom: .5rem;
+  font-size: .45rem;
+}
+.introduction .nL,
+.introduction .nR {
+  margin-left: 0;
+  background-color: lightcoral;
+  width: 3.5rem;
+  height: 2.5rem;
+  padding: .5rem .3rem;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: .3rem;
+  opacity: .8;
+  animation: fadeIn 2s;
+}
+.introduction .nL .left,
+.introduction .nR .left {
+  height: 4rem;
+}
+.introduction .nL .left li,
+.introduction .nR .left li {
+  animation: bounceInLeft 2.5s ;
+}
+.introduction .nR {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  height: 2.5rem;
+  width: 4.5rem;
+  animation: fadeIn 2s;
+}
+.introduction .nR .right {
+  height: 4rem;
+}
+.introduction .nR .right li {
+  animation: bounceInRight 2.5s ;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .8;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .8;
+  }
+}
+@-webkit-keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
